@@ -25,7 +25,7 @@ public class Main {
         printStringMultipleTimes("GitHub — это облачная платформа для хостинга IT-проектов и совместной разработки.", 3);
 
         // Задача 9
-        System.out.println(isLeapYear(2025));
+        System.out.println(isLeapYear(2024));
 
         // Задача 10
         // Инициализация массива с элементами 0 и 1
@@ -97,7 +97,7 @@ public class Main {
 
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (value > 0 && value <= 100) {
+        } else if ( value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
@@ -138,15 +138,7 @@ public class Main {
     }
 
     public static boolean isLeapYear(int year) {
-        // Проверяем условия для високосного года
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                // Если год делится на 100, проверяем, является ли он также делимым на 400
-                return year % 400 == 0;
-            }
-            return true; // Год делится на 4, но не на 100
-        }
-        return false; // Год не делится на 4
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
     public static void swapValues(int[] array) {
